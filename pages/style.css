@@ -1,0 +1,40 @@
+:root {
+    --aside: 21vw;
+    --principal: calc(100vw - var(--aside));
+    --header: 17vh;
+    --main: calc(100vh - var(--header));
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 'aside header'
+                          'aside main';
+    grid-template-columns: var(--aside) var(--principal);
+    grid-template-rows:  var(--header) var(--main);
+    background-color: antiquewhite;
+}
+
+aside {
+    grid-area: aside;
+    background-color: lightblue;
+}
+
+header {
+    grid-area: header;
+    background-color: aquamarine;
+}
+
+main {
+    grid-area: main;
+    background-color: antiquewhite;
+    overflow: scroll;
+}
