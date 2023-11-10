@@ -5,6 +5,11 @@
     --main: calc(100vh - var(--header));
 }
 
+@font-face {
+    font-family: 'roboto';
+    src: url('../fonts/roboto/Roboto-Regular.ttf') format('truetype');
+}
+
 * {
     box-sizing: border-box;
 }
@@ -12,6 +17,7 @@
 body {
     margin: 0;
     padding: 0;
+    font-family: 'roboto', sans-serif;
 }
 
 .container {
@@ -25,16 +31,53 @@ body {
 
 aside {
     grid-area: aside;
-    background-color: lightblue;
+    background-color: #0096D6;
+    display: grid;
+    grid-template-rows: 10vh 30vh auto;
+    grid-template-columns: 100%;
+    gap: 12px;
+    color: white;
+}
+
+aside>div {
+    display: grid;
+    grid-template-columns: 50px auto;
+    grid-template-rows: repeat(auto-fill, 2em);
+}
+
+.navigation {
+    margin-top: 20px;
+}
+
+.title {
+    position: relative;
+    top: -12px;
+}
+
+aside>small{
+    padding: 0 auto;
+    margin: 0 auto;
+}
+
+aside div>img {
+    margin-left: 20px;
+    filter: invert(1);
+    height: 1em;
+}
+
+img.main {
+    height: 1.7em;
 }
 
 header {
     grid-area: header;
-    background-color: aquamarine;
+    background-color: white;
+    box-shadow: 2px 2px 3px rgb(214, 221, 230);
+    z-index: 3;
 }
 
 main {
     grid-area: main;
-    background-color: antiquewhite;
+    background-color: rgb(233, 233, 240);
     overflow: scroll;
 }
