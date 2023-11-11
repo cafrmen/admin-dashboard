@@ -26,7 +26,6 @@ body {
                           'aside main';
     grid-template-columns: var(--aside) var(--principal);
     grid-template-rows:  var(--header) var(--main);
-    background-color: antiquewhite;
 }
 
 aside {
@@ -80,4 +79,147 @@ main {
     grid-area: main;
     background-color: rgb(233, 233, 240);
     overflow: scroll;
+    display: grid;
+    grid-template-columns: 72% 28%;
+}
+
+main>h4 {
+    position: fixed;
+    margin: 1em;
+}
+
+.one {
+    margin: 1em;
+    padding-top: 30px;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.box {
+    height: calc(var(--main) / 3.8);
+    border-radius: 5px;
+    display: grid;
+    grid-template-rows: 80% 20%;
+    background-color: white;
+    box-shadow: 3px 3px 3px lightgray;
+}
+
+.color {
+    width: 5px;
+    position: absolute;
+    height: calc(var(--main) / 3.8);
+    background-color: orange;
+    border-radius: 5px 0 0 5px;
+}
+
+.text {
+    padding: 20px 12px 0 20px;
+}
+
+main p {
+    margin: 0;
+    padding: 0;
+}
+
+main small {
+    margin: 0;
+    padding: 0;
+    color: lightslategray;
+}
+
+.img {
+    width: 100%;
+    height: 20px;
+}
+
+.one img {
+    width: 6%;
+    margin-right: 20px;
+    float: right;
+}
+
+.two {
+    height: 100%;
+    display: grid;
+    grid-template-rows: 47px auto 47px auto;
+}
+
+.two>h4 {
+    margin: 16px 0 11px 0;
+}
+
+.announcements {
+    background-color: white;
+    margin-right: 20px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px lightgray;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.announcements p {
+    font-size: smaller;
+}
+
+.announcements small {
+    font-size: 0.7em;
+}
+
+.trending {
+    background-color: white;
+    margin: 0 20px 25px 0;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 3px 3px 3px lightgray;
+    display: grid;
+    grid-template-rows: auto;
+}
+
+.user {
+    display: grid;
+    grid-template-columns: 50px auto;
+    gap: 7px;
+    margin-bottom: 12px;
+}
+
+.user>img {
+    width: 80%;
+}
+
+.trentext>p {
+    font-size: smaller;
+}
+
+.trentext>small {
+    font-size: 0.7em;
+}
+
+@media screen and (max-width:600px) {
+    .title {
+        display: none;
+        visibility: hidden;
+    }
+    aside small {
+        visibility: hidden;
+    }
+    main {
+        grid-template-columns: 100%;
+    }
+    main>h4 {
+        position: relative;
+        margin-bottom: auto;
+    }
+    .one {
+        margin-top: 0;
+        grid-template-columns: 100%;
+    }
+    .color {
+        display: none;
+        visibility: hidden;
+    }
+    .two {
+        margin-left: 20px;
+    }
 }
