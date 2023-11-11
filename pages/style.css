@@ -1,7 +1,7 @@
 :root {
     --aside: 21vw;
     --principal: calc(100vw - var(--aside));
-    --header: 17vh;
+    --header: max(17vh, 120px);
     --main: calc(100vh - var(--header));
 }
 
@@ -72,7 +72,90 @@ header {
     grid-area: header;
     background-color: white;
     box-shadow: 2px 2px 3px rgb(214, 221, 230);
+    display: grid;
+    grid-template-rows: 50% 50%;
+    padding: 12px;
     z-index: 3;
+}
+
+.first-search {
+    display: grid;
+    grid-template-columns: 60% 40%;
+}
+
+.first-input {
+    display: flex;
+    align-items: center;
+}
+
+input {
+    border-radius: 50px;
+    background-color:  rgb(233, 233, 240);
+    width: 100%;
+    border: none;
+    padding: 3px;
+    margin-left: 12px;
+}
+
+.svg {
+    height: 20px;
+    float: left;
+}
+
+.first-icon {
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    padding-right: 20px;
+}
+
+.user {
+    margin: 0 20px;
+    padding: 0;
+    height: 30px;
+}
+
+.first-icon p {
+    font-size: small;
+}
+
+.second-profile {
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.user-data h3 {
+    margin: 0;
+    padding: 0;
+}
+
+.profile {
+    float: left;
+    height: 50px;
+    margin-right: 20px;
+}
+
+.second-buttons {
+    margin: auto;
+    margin-right: 12px;
+    text-align: center;
+}
+
+button {
+    width: 60px;
+    font-size: x-small;
+    margin-left: 20px;
+    padding: 5px;
+    color: rgb(233, 233, 240);
+    background-color: #0096D6;
+    border-radius: 50px;
+    border: 1px solid #0096D6;
+    transition: 0.5s ease-in-out;
+}
+
+button:hover {
+    background-color: rgb(233, 233, 240);
+    color: #0096D6;
 }
 
 main {
@@ -204,12 +287,37 @@ main small {
     aside small {
         visibility: hidden;
     }
+    header {
+        grid-template-rows: auto;
+    }
+    .first-search {
+        display: block;
+    }
+    .first-icon {
+        display: none;
+        visibility: hidden;
+    }
+    .second-profile {
+        display: block;
+    }
+    .second-buttons {
+        display: flex;
+        width: auto;
+        margin-top: 12px;
+        justify-content: right;
+    }
     main {
         grid-template-columns: 100%;
     }
     main>h4 {
         position: relative;
         margin-bottom: auto;
+    }
+    .box {
+        height: auto;
+    }
+    .text {
+        margin-bottom: 25px;
     }
     .one {
         margin-top: 0;
